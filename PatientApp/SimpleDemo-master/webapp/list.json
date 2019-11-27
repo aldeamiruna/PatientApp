@@ -1,0 +1,31 @@
+{
+    "Gender":[
+        {
+            "gender": "M"
+        },
+        {
+            "gender": "F"
+        }
+    ],
+    "City":[
+        {
+            "city": "Brasov"
+        },
+        {
+            "city": "Bucuresti"
+        },
+        {
+            "city": "Cluj"
+        },
+        {
+            "city": "Sibiu"
+        },
+        {
+            "city": "Timisoara"
+        },
+        {
+            "city": "Iasi"
+        }
+    ]
+}
+   

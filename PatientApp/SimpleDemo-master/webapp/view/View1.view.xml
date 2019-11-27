@@ -1,0 +1,94 @@
+<View controllerName="com.cerner.miruna.PatientApp.controller.View1" 
+xmlns:mvc="sap.ui.core.mvc" 
+xmlns:table="sap.ui.table" 
+xmlns:html="http://www.w3.org/1999/xhtml" 
+displayBlock="true" 
+xmlns:core="sap.ui.core" 
+xmlns="sap.m"
+>
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+			<!-- <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTriZkfNd4PtdASf4sSEYSIiRXZGgDbD-gDakECIIvSHzFW2UbB&s" height="1.25rem"/> -->
+				
+					<content>
+						<Table id="idProductsTable" inset="false" items="{path: '/Patients'}">
+						<columns>
+							<Column width="12em">
+								<Text text="Name" />
+							</Column>
+							<Column width="14em" demandPopin="true">
+								<Text text="Age" />
+							</Column>
+							<Column width="12em" demandPopin="true" hAlign="End">
+								<Text text="Gender" />
+							</Column>
+							<Column width="12em"  demandPopin="true" hAlign="Center">
+								<Text text="City" />
+							</Column>
+							<Column hAlign="End">
+							<HBox justifyContent="SpaceAround">
+			
+							<VBox>
+								
+								<HBox alignItems="Center">
+									<Label text="Editable:" class="sapUiTinyMarginEnd"/>
+									<Switch type="AcceptReject" state="true" change="toggleEditable"/>
+								</HBox>
+							</VBox>
+							</HBox>	
+							</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{name}" />
+										<Text text="{age}" />										
+										<Select 
+											enabled="{/Editable}"
+											forceSelection="false"
+											selectedKey="{gender}"
+											items="{path:'/Gender'}" >
+											<core:Item key="{gender}" text="{gender}" />
+										</Select>
+										<Select
+											enabled="{/Editable}"
+											forceSelection="false"
+											items="{path:'/City'}" selectedKey="{city}">
+											<core:Item key="{city}" text="{city}" />
+										</Select>
+					<!-- <HBox justifyContent="SpaceAround"> -->
+			
+				<!-- <VBox>
+					<HBox alignItems="Center">
+						<Label text="Enabled:" class="sapUiTinyMarginEnd"/>
+						<Switch type="AcceptReject" state="false" change="toggleEnabled"/>
+					</HBox>
+					<HBox alignItems="Center">
+						<Label text="Editable:" class="sapUiTinyMarginEnd"/>
+						<Switch type="AcceptReject" state="false" change="toggleEditable"/>
+					</HBox>
+				</VBox>
+			</HBox>	 -->
+
+				
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+						
+						<!-- <HBox >
+                            <Button id="idSave"  type="Accept" class="saveButton" text="Save" press="onSave" />
+
+							<Button id="idCancel" type="Reject" class="saveButton" text="Cancel" press="onCancel" />
+					        </HBox> -->
+
+
+						
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</View>
